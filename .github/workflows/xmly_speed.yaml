@@ -30,6 +30,9 @@ jobs:
         env:
             XMLY_SPEED_COOKIE: ${{ secrets.XMLY_SPEED_COOKIE }}  #必须 cookie 多账号 \n 分割
             AUTO_TAKE_OUT: ${{ secrets.AUTO_TAKE_OUT }}  #非必须 是否自动提现支付宝20
+            XMLY_ANDROID_AGENT: ${{ secrets.XMLY_ANDROID_AGENT }} #非必须 自定义useragent
+            XMLY_ACCUMULATE_TIME: ${{ secrets.XMLY_ACCUMULATE_TIME }} #非必须 自定义是否刷时长，默认1(即刷时长),反之设置为0
+            NOTIFY_TIME: ${{ secrets.NOTIFY_TIME }} #非必须 自定义通知时间
             BARK: ${{ secrets.BARK }}  #非必须 bark通知
             SCKEY: ${{ secrets.SCKEY }}  #非必须 server酱通知
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}  #非必须 tg机器人token

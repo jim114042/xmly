@@ -43,6 +43,14 @@ XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默�
 UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.0.12 kdtunion_iting/1.0 iting(main)/1.0.12/ios_1"
 # 非iOS设备的需要的自行修改,自己抓包 与cookie形式类似
 
+if "XMLY_ANDROID_AGENT" in os.environ:
+    UserAgent = os.environ["XMLY_ANDROID_AGENT"]
+if "XMLY_ACCUMULATE_TIME" in os.environ and os.environ["XMLY_ACCUMULATE_TIME"] == 0:
+    XMLY_ACCUMULATE_TIME = 0
+    print("已关闭刷时长")
+if "NOTIFY_TIME" in os.environ and 1 <= os.environ["NOTIFY_TIME"] <= 24:
+    notify_time = os.environ["NOTIFY_TIME"]
+
 def str2dict(str_cookie):
     if type(str_cookie) == dict:
         return str_cookie
