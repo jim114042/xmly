@@ -1102,6 +1102,7 @@ def run():
             device = cookies['device_model']
         else:
             device = f"设备{k + 1}"
+        print(f"{device}\n")
 
         table.append((user_info_res['nickname'], total, todayTotal,
                       historyTotal, continuousDays,))
